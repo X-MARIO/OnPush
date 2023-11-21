@@ -1,6 +1,7 @@
 <div class="flex column" [style]="{
   'align-items': 'center',
 }">
+  <p [style]="'color: red'">{{title}}</p>
   <p>AppComponent counter {{counter}}</p>
   <button (click)="onAdd($event)">AppComponent</button>
 </div>
@@ -9,5 +10,5 @@
   justifyContent: 'space-around',
 }">
   <app-component1></app-component1>
-  <app-component2></app-component2>
+  <app-component2 [input]="false"></app-component2>
 </div>

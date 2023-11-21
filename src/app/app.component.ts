@@ -54,7 +54,7 @@ export const LOGGED_TOKEN: InjectionToken<ILogConfig> = new InjectionToken<ILogC
   }]
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
-  public readonly title: string = 'OnPush';
+  public readonly title: string = 'Default';
 
   public counter: number = 0;
 
