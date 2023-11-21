@@ -96,6 +96,7 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
   }
 
   public onAdd($event: MouseEvent) {
+    console.log('>> AppComponent click');
     this.counter++;
   }
 }
