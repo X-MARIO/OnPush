@@ -42,6 +42,10 @@ export const config: ILogConfig = {
 
 export const LOGGED_TOKEN: InjectionToken<ILogConfig> = new InjectionToken<ILogConfig>('LOGGED_TOKEN');
 
+export const factorial: (n: number) => number =  (n : number) => {
+  return (n != 1) ? n * factorial(n - 1) : 1;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
