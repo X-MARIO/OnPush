@@ -1,0 +1,12 @@
+<div class="flex column" [ngClass]="{
+  'center': true,
+}">
+  <p [style]="'color: red'">{{title}}</p>
+  <p>Component2Component counter {{counter}}</p>
+  <button (click)="onAdd($event)">Component2Component</button>
+</div>
+
+<div class="flex" [class.gap]="true">
+  <app-component2-1></app-component2-1>
+  <app-component2-2></app-component2-2>
+</div>

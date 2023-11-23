@@ -1,0 +1,20 @@
+<div class="flex column" [ngClass]="{
+  'center': true,
+}">
+  <p [style]="'color: red'">{{title}}</p>
+  <p>Component1Component counter {{counter}}</p>
+  <button (click)="onAdd($event)">Component1Component</button>
+
+</div>
+
+<div class="flex"
+     [ngClass]="{
+  spaceAround: true,
+}"
+     [style]="{
+      gap: '20px',
+     }"
+>
+  <app-component1-1></app-component1-1>
+  <app-component1-2></app-component1-2>
+</div>
