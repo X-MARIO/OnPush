@@ -5,7 +5,7 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  DoCheck,
+  DoCheck, HostListener,
   Inject,
   OnChanges,
   OnDestroy,
@@ -23,10 +23,10 @@ import {factorial, ILogConfig, LOGGED_TOKEN} from '../app.component';
   imports: [CommonModule, Component11Component, Component12Component],
   templateUrl: './component1.component.html',
   styleUrl: './component1.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Component1Component implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
-  public readonly title: string = 'Default';
+  public readonly title: string = 'OnPush';
 
   public counter: number = 0;
 
@@ -71,5 +71,10 @@ export class Component1Component implements OnChanges, OnInit, DoCheck, AfterCon
   public onAdd($event: MouseEvent) {
     console.log('>> Component1Component click');
     this.counter++;
+  }
+
+  @HostListener('mouseenter')
+  public mouseenter(): void {
+    console.log('mouseenter')
   }
 }

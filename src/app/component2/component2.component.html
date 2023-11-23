@@ -1,9 +1,38 @@
-<div class="flex column" [ngClass]="{
+<div
+  class="flex column" [ngClass]="{
   'center': true,
 }">
   <p [style]="'color: red'">{{title}}</p>
   <p>Component2Component counter {{counter}}</p>
   <p>Component2Component counter {{parentCounter}}</p>
+  <p>getFactorial {{getFactorial}}</p>
+  <p>getFactorial 2 {{getFactorial}}</p>
+<!--  <p>getFactorial 3 {{getFactorial}}</p>-->
+<!--  <p>getFactorial 4 {{getFactorial}}</p>-->
+  <p>funcFactorial 1 {{funcFactorial()}}</p>
+  <p>funcFactorial 2 {{funcFactorial()}}</p>
+  <p>funcFactorialWithParams 1 {{funcFactorialWithParams(1)}}</p>
+<!--  <p>funcFactorialWithParams 2 {{funcFactorialWithParams(2)}}</p>-->
+<!--  <p>funcFactorial 2 {{funcFactorial()}}</p>-->
+<!--  <p>funcFactorial 3 {{funcFactorial()}}</p>-->
+<!--  <p>funcFactorial 4 {{funcFactorial()}}</p>-->
+<!--  <p>funcFactorial 5 {{funcFactorial()}}</p>-->
+  <p>asyncFactorial 1 {{asyncFactorial() | async}}</p>
+<!--  <p>asyncFactorial 2 {{asyncFactorial() | async}}</p>-->
+  <p>asyncFactorialWithParams 1 {{asyncFactorialWithParams(1) | async}}</p>
+<!--  <p>asyncFactorialWithParams 1 {{asyncFactorialWithParams(2) | async}}</p>-->
+
+  <p>tuiPure</p>
+
+  <p>funcFactorialWithParamsTaigaUI 1 {{funcFactorialWithParamsTaigaUI(1)}}</p>
+<!--  <p>funcFactorialWithParamsTaigaUI 2 {{funcFactorialWithParamsTaigaUI(2)}}</p>-->
+  <p>asyncFactorialWithParams 1 {{asyncFactorialWithParamsTaigaUI(1) | async}}</p>
+<!--  <p>asyncFactorialWithParams 1 {{asyncFactorialWithParamsTaigaUI(2) | async}}</p>-->
+
+  <p>pipe</p>
+
+  <p>{{ counter | log }}</p>
+
   <button (click)="onAdd($event)">Component2Component</button>
 </div>
 

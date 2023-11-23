@@ -1,3 +1,5 @@
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
+import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from "@taiga-ui/core";
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -50,13 +52,15 @@ export const factorial: (n: number) => number =  (n : number) => {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, Component1Component, Component2Component],
+  imports: [CommonModule, RouterOutlet, Component1Component, Component2Component, TuiRootModule, TuiDialogModule, TuiAlertModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [{
     provide: LOGGED_TOKEN,
     useValue: config,
-  }],
+  },
+      {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}
+],
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {

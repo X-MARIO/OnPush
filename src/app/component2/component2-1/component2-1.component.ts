@@ -24,10 +24,10 @@ import {Component212Component} from './component2-1-2/component2-1-2.component';
   imports: [CommonModule, Component22Component, Component211Component, Component212Component],
   templateUrl: './component2-1.component.html',
   styleUrl: './component2-1.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Component21Component implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
-  public readonly title: string = 'Default';
+  public readonly title: string = 'OnPush';
 
   public counter: number = 0;
 
