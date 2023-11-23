@@ -36,7 +36,7 @@ export class Component12Component implements OnChanges, OnInit, DoCheck, AfterCo
   }
 
   public ngDoCheck(): void {
-    this.counter = factorial(10000);
+    this.counter = factorial(1000);
     this.config.ngDoCheck && console.log('>> Component12Component ngDoCheck');
   }
 

@@ -3,6 +3,7 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   DoCheck,
   Inject,
@@ -55,7 +56,8 @@ export const factorial: (n: number) => number =  (n : number) => {
   providers: [{
     provide: LOGGED_TOKEN,
     useValue: config,
-  }]
+  }],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   public readonly title: string = 'Default';
@@ -76,6 +78,7 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
   }
 
   public ngDoCheck(): void {
+    // this.counter = factorial(1000);
     this.config.ngDoCheck && console.log('>> AppComponent ngDoCheck');
   }
 

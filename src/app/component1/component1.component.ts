@@ -15,7 +15,7 @@ import {
 import {CommonModule} from '@angular/common';
 import {Component11Component} from './component1-1/component1-1.component';
 import {Component12Component} from './component1-2/component1-2.component';
-import {ILogConfig, LOGGED_TOKEN} from '../app.component';
+import {factorial, ILogConfig, LOGGED_TOKEN} from '../app.component';
 
 @Component({
   selector: 'app-component1',
@@ -44,6 +44,7 @@ export class Component1Component implements OnChanges, OnInit, DoCheck, AfterCon
   }
 
   public ngDoCheck(): void {
+    this.counter = factorial(1000);
     this.config.ngDoCheck && console.log('>> Component1Component ngDoCheck');
   }
 

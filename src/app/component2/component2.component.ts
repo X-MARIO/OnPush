@@ -16,7 +16,7 @@ import {
 import {CommonModule} from '@angular/common';
 import {Component21Component} from './component2-1/component2-1.component';
 import {Component22Component} from './component2-2/component2-2.component';
-import {ILogConfig, LOGGED_TOKEN} from '../app.component';
+import {factorial, ILogConfig, LOGGED_TOKEN} from '../app.component';
 
 @Component({
   selector: 'app-component2',
@@ -24,7 +24,7 @@ import {ILogConfig, LOGGED_TOKEN} from '../app.component';
   imports: [CommonModule, Component21Component, Component22Component],
   templateUrl: './component2.component.html',
   styleUrl: './component2.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class Component2Component implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
@@ -32,7 +32,12 @@ export class Component2Component implements OnChanges, OnInit, DoCheck, AfterCon
     required: true,
   }) public input: boolean = false;
 
-  public readonly title: string = 'OnPush';
+  @Input({
+    required: true,
+  }) public parentCounter: number = -1;
+
+
+  public readonly title: string = 'Default';
 
   public counter: number = 0;
 
@@ -50,6 +55,7 @@ export class Component2Component implements OnChanges, OnInit, DoCheck, AfterCon
   }
 
   public ngDoCheck(): void {
+    this.counter = factorial(1000);
     this.config.ngDoCheck && console.log('>> Component2Component ngDoCheck');
   }
 

@@ -1,14 +1,19 @@
 import {
   AfterContentChecked,
   AfterContentInit,
-  AfterViewChecked, AfterViewInit,
+  AfterViewChecked,
+  AfterViewInit,
   Component,
-  DoCheck, Inject,
-  OnChanges, OnDestroy,
-  OnInit, SimpleChanges
+  DoCheck,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {ILogConfig, LOGGED_TOKEN} from '../../../app.component';
+import {CommonModule} from '@angular/common';
+import {factorial, ILogConfig, LOGGED_TOKEN} from '../../../app.component';
 import {Component21Component} from '../component2-1.component';
 import {Component22Component} from '../../component2-2/component2-2.component';
 
@@ -20,6 +25,11 @@ import {Component22Component} from '../../component2-2/component2-2.component';
   styleUrl: './component2-1-2.component.scss'
 })
 export class Component212Component implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+
+  @Input({
+    required: true
+  }) public input: number = 0;
+
   public readonly title: string = 'Default';
 
   public counter: number = 0;
@@ -38,6 +48,7 @@ export class Component212Component implements OnChanges, OnInit, DoCheck, AfterC
   }
 
   public ngDoCheck(): void {
+    this.counter = factorial(1000);
     this.config.ngDoCheck && console.log('>> Component212Component ngDoCheck');
   }
 

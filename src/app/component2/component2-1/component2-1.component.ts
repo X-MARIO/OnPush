@@ -13,7 +13,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ILogConfig, LOGGED_TOKEN} from '../../app.component';
+import {factorial, ILogConfig, LOGGED_TOKEN} from '../../app.component';
 import {Component22Component} from '../component2-2/component2-2.component';
 import {Component211Component} from './component2-1-1/component2-1-1.component';
 import {Component212Component} from './component2-1-2/component2-1-2.component';
@@ -24,10 +24,10 @@ import {Component212Component} from './component2-1-2/component2-1-2.component';
   imports: [CommonModule, Component22Component, Component211Component, Component212Component],
   templateUrl: './component2-1.component.html',
   styleUrl: './component2-1.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class Component21Component implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterViewChecked, OnDestroy {
-  public readonly title: string = 'OnPush';
+  public readonly title: string = 'Default';
 
   public counter: number = 0;
 
@@ -45,6 +45,7 @@ export class Component21Component implements OnChanges, OnInit, DoCheck, AfterCo
   }
 
   public ngDoCheck(): void {
+    factorial(1000);
     this.config.ngDoCheck && console.log('>> Component21Component ngDoCheck');
   }
 
